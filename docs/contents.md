@@ -1,0 +1,13 @@
+このサイトには次の情報を記載してください。
+- 私の経歴を含んだ自己紹介
+- 開発プロダクト実績
+    - シニアアテンダント（民間資格）のeラーニングシステム（https://iaasa.net/）
+    - SNSモバイルアプリ開発（該当URLなし）
+    - 採用メディアサイト「レイワーカーズ」（https://reiworkers.com/）
+    - 懐かしのプロフィール帳アプリ（該当URLなし）
+    - 某インフルエンサーのおすすめ商品紹介サイト（該当URLなし）
+    - 人材派遣業企業の受注・シフト管理システム（該当URLなし）
+- Xアカウント（https://x.com/oono_dev）
+- Qiitaアカウント（https://qiita.com/oono_dev）
+- githubアカウント（https://github.com/oono-dev）
+- speakerdeckアカウント（https://speakerdeck.com/oono）
