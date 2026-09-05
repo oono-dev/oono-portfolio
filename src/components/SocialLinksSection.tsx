@@ -85,7 +85,7 @@ export default function SocialLinksSection() {
       <div className="mt-20 text-center">
         <div className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-full border border-indigo-100">
           <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full animate-pulse"></div>
-          <span className="text-sm font-medium text-gray-700">お気軽にお声がけください</span>
+          <span className="text-sm font-medium text-gray-700">副業等のご依頼はXのDMへ</span>
           <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full animate-pulse"></div>
         </div>
       </div>

@@ -37,11 +37,11 @@ export default function AboutSection() {
                 広告代理店ベンチャー
               </span>
               にて
-              webエンジニアとして勤務。2025年8月から美容医療業界のSaasを開発するスタートアップに転職し、
+              webエンジニアとして勤務。2025年8月より業務SaaSを複数展開するスタートアップにて
               <span className="text-indigo-600 font-semibold">
                 フルスタックエンジニア
               </span>
-              として勤務予定。
+              として勤務中。
             </p>
             <div className="mt-6 pt-6 border-t border-gray-200">
               <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-medium">
@@ -59,12 +59,17 @@ export default function AboutSection() {
         </div>
 
         <div className="flex justify-center gap-4 fade-in-up stagger-3">
-          <div className="flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-white/20">
+          <a
+            href="https://x.com/oono_dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-white/20 hover:shadow-xl hover:scale-105 transition-all duration-300"
+          >
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
             <span className="text-sm font-medium text-gray-600">
-              Available for new opportunities
+              副業等のご依頼はXのDMへ
             </span>
-          </div>
+          </a>
         </div>
       </div>
     </section>

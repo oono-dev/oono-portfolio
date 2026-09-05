@@ -13,6 +13,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a modern portfolio website for 大野克樹 (Oono Katsuki), a web engineer. The site showcases development experience, projects, and technical skills with a sophisticated white-based modern UI design.
 
+**Purpose (decided 2026-09)**: an engineer's "business card", not a job-hunting page. Primary readers are fellow engineers; it is also shown to new colleagues (including business-side members) during 1on1s, so career text must be readable without engineering jargon. The site advertises that side work (副業) requests are welcome via X DM. There is no contact form.
+
+**Content sources**: `docs/requirement.md` (original requirements, now partially outdated), `docs/contents.md`, and the owner's Wantedly profile for career history. When a fact on the site conflicts with these docs, the site (and the decisions below) wins.
+
 ## Project Architecture
 
 - **Framework**: Next.js 15.3.4 with App Router
@@ -28,7 +32,8 @@ This is a modern portfolio website for 大野克樹 (Oono Katsuki), a web engine
   - `page.tsx` - Main landing page with gradient backgrounds
   - `globals.css` - Custom CSS with animations and glass effects
 - `src/components/` - React components
-  - `AboutSection.tsx` - Hero section with floating profile avatar
+  - `AboutSection.tsx` - Hero section with floating profile avatar and the X-DM badge
+  - `CareerSection.tsx` - Client component: vertical timeline of career history (3 companies, oldest first); each card opens a detail dialog (summary, 担当業務, 使用技術, この経験から)
   - `WorksSection.tsx` - Projects showcase with animated cards
   - `SocialLinksSection.tsx` - Social media links grid
   - `ProjectCard.tsx` - Reusable project card with tech icons
@@ -61,10 +66,18 @@ This is a modern portfolio website for 大野克樹 (Oono Katsuki), a web engine
 1. **About Section**: 
    - Profile avatar with gradient border
    - Name and title with gradient text effect
-   - Professional background description
-   - "Available for opportunities" status indicator
+   - Professional background description (SIer → 広告代理店ベンチャー → 業務SaaSスタートアップ)
+   - Badge linking to X DM: 「副業等のご依頼はXのDMへ」 (replaced the old "Available for opportunities" indicator)
 
-2. **Works Section** (6 projects in priority order):
+2. **Career Section** (company-level timeline, oldest first, all company names public):
+   - 2021年4月〜2023年3月: 株式会社中央コンピュータシステム / 開発メンバー (金融系SIer)
+   - 2023年4月〜2025年7月: 株式会社WAVE / エンジニアリング責任者 (「ひとりエンジニア」)
+   - 2025年8月〜現在: アトミックソフトウェア株式会社 / フルスタックエンジニア (プレイングスクラムマスター, 5人チーム)
+   - Each entry: period + industry tag + company + role + one-line episode. No education entries, no per-role splits.
+   - Clicking a card opens a dialog with `detail` (summary, responsibilities, technologies, learnings). Close via ✕, Esc, or backdrop click. The SIer entry intentionally has no technologies listed (stack not confirmed).
+
+3. **Works Section** (7 projects in priority order):
+   - 警備業向け業務管理SaaS「警備フォース」(current job, external link, DDD + "Scrum Master" badges, screenshot `pj7.png`)
    - 人材派遣業企業の受注・シフト管理システム (DDD architecture)
    - 採用メディアサイト「レイワーカーズ」 (with external link)
    - SNSモバイルアプリ開発 (with screenshot)
@@ -72,20 +85,37 @@ This is a modern portfolio website for 大野克樹 (Oono Katsuki), a web engine
    - インフルエンサー商品紹介サイト
    - 懐かしのプロフィール帳アプリ (with screenshot)
 
-3. **Links Section**: 
+4. **Links Section**: 
    - X (Twitter), Qiita, GitHub, Speaker Deck
    - Animated cards with gradient backgrounds
-   - Contact encouragement message
+   - Closing message 「副業等のご依頼はXのDMへ」
+
+**Content decisions to preserve**:
+- Existing Works cards keep "etc.." in their tech lists on purpose (card size over completeness).
+- The `architecture` prop on `ProjectCard` is rendered under the label 「アーキテクチャ・役割」 and is used for both DDD and the Scrum Master role badge.
+- Only technologies the owner actually designed/built go on the current-job card (AWS/Terraform yes, GCP no).
 
 ### Technology Icons
 
 The `TechIcon` component supports color-coded icons for:
-- Frontend: React, Next.js, Flutter, Dart
-- Backend: PHP, Laravel
-- Cloud: AWS services (EC2, RDS, S3, CloudFront, ECS, Fargate, CodeBuild)
+- Frontend: TypeScript, React, Next.js, Flutter, Dart
+- Backend: PHP, Laravel, Hono
+- Cloud: AWS services (EC2, RDS, S3, CloudFront, ECS, Fargate, CodeBuild), Terraform
 - Deployment: Vercel, Heroku
 - Other: Micro CMS, payment gateways, TestFlight
-- Architecture: DDD (Domain Driven Design)
+- Architecture / role: DDD (Domain Driven Design), Scrum Master
+
+Unknown names fall back to a generic 🔧 icon, so add an entry to `techIcons` whenever a new technology is used in `WorksSection.tsx`.
+
+### Screenshots
+
+Work screenshots live in `public/images/works/pjN.*`. They can be captured with headless Chrome:
+
+```
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu --hide-scrollbars --window-size=1280,800 --virtual-time-budget=8000 --screenshot=public/images/works/pjN.png <url>
+```
+
+Note that headless Chrome on macOS will not go narrower than roughly 500px, so a 390px capture looks clipped even when the layout is fine.
 
 ### SEO Configuration
 

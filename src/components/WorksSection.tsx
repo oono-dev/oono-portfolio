@@ -2,6 +2,13 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "警備業向け業務管理SaaS「警備フォース」",
+    technologies: ["TypeScript", "React", "Next.js", "Hono", "AWS", "Terraform"],
+    architecture: ["DDD", "Scrum Master"],
+    url: "https://page.keibi-force.com",
+    imageUrl: "/images/works/pj7.png",
+  },
+  {
     title: "人材派遣業企業の受注・シフト管理システム",
     technologies: ["React", "PHP", "Laravel", "Heroku"],
     architecture: ["DDD"],

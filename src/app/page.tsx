@@ -1,4 +1,5 @@
 import AboutSection from '@/components/AboutSection'
+import CareerSection from '@/components/CareerSection'
 import WorksSection from '@/components/WorksSection'
 import SocialLinksSection from '@/components/SocialLinksSection'
 
@@ -10,6 +11,7 @@ export default function Home() {
       
       <main className="relative container mx-auto px-4 py-16 max-w-7xl">
         <AboutSection />
+        <CareerSection />
         <WorksSection />
         <SocialLinksSection />
       </main>

@@ -4,7 +4,10 @@ interface TechIconProps {
 }
 
 const techIcons: Record<string, { icon: string; color: string }> = {
+  'TypeScript': { icon: '🔷', color: 'from-blue-500 to-blue-700' },
   'React': { icon: '⚛️', color: 'from-cyan-400 to-blue-500' },
+  'Hono': { icon: '🔥', color: 'from-orange-400 to-red-500' },
+  'Terraform': { icon: '🧱', color: 'from-purple-500 to-violet-700' },
   'Next.js': { icon: '▲', color: 'from-gray-800 to-gray-600' },
   'PHP': { icon: '🐘', color: 'from-indigo-500 to-purple-600' },
   'Laravel': { icon: '🔶', color: 'from-red-500 to-orange-500' },
@@ -23,7 +26,8 @@ const techIcons: Record<string, { icon: string; color: string }> = {
   'TestFlight': { icon: '✈️', color: 'from-blue-500 to-sky-600' },
   'Micro CMS': { icon: '📝', color: 'from-green-400 to-cyan-500' },
   'GMPペイメントゲートウェイ': { icon: '💳', color: 'from-emerald-400 to-teal-500' },
-  'DDD': { icon: '🏗️', color: 'from-slate-600 to-gray-700' }
+  'DDD': { icon: '🏗️', color: 'from-slate-600 to-gray-700' },
+  'Scrum Master': { icon: '🔄', color: 'from-emerald-500 to-teal-600' }
 }
 
 export default function TechIcon({ name, className = '' }: TechIconProps) {

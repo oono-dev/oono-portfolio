@@ -51,7 +51,7 @@ export default function ProjectCard({
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
                 <h4 className="text-sm font-semibold text-gray-700 tracking-wide">
-                  アーキテクチャ
+                  アーキテクチャ・役割
                 </h4>
               </div>
               <div className="flex flex-wrap gap-2">
