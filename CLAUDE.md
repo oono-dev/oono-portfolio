@@ -19,7 +19,7 @@ This is a modern portfolio website for 大野克樹 (Oono Katsuki), a web engine
 
 ## Project Architecture
 
-- **Framework**: Next.js 15.3.4 with App Router
+- **Framework**: Next.js 15.5 with App Router
 - **Styling**: Tailwindcss v4 with custom CSS animations and effects
 - **TypeScript**: Full TypeScript support with strict mode
 - **Fonts**: Geist Sans and Geist Mono from Google Fonts
